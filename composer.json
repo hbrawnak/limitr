@@ -1,0 +1,25 @@
+{
+    "name": "hbrawnak/limitr",
+    "description": "A middleware-agnostic rate limitr with dynamic rules and storage backends support",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Hbrawnak\\Limitr\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Md Habibur Rahman",
+            "email": "hbrawnak@email.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0"
+    },
+    "suggest": {
+        "ext-redis": "Required for Redis storage support",
+        "ext-memcached": "Required for Memcached storage support",
+        "ext-pdo": "Required for database storage support"
+    }
+}
