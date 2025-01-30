@@ -5,7 +5,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Hbrawnak\\Limitr\\": "src/"
+            "Hbrawnak\\Limitr\\": "src/",
+            "Hbrawnak\\Limitr\\Tests\\": "tests/"
         }
     },
     "authors": [
@@ -15,11 +16,15 @@
         }
     ],
     "require": {
-        "php": "^7.0"
+        "php": ">=7.0"
     },
     "suggest": {
-        "ext-redis": "Required for Redis storage support",
-        "ext-memcached": "Required for Memcached storage support",
-        "ext-pdo": "Required for database storage support"
+        "ext-redis": "Required for Redis storage support"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit tests"
     }
 }
