@@ -113,36 +113,6 @@ if ($blocklist->isBlocked('ip:203.0.113.42')) {
 }
 ```
 
-
-#### Laravel Middleware Example
-
-```
-namespace App\Http\Middleware;
-
-use Closure;
-use SmartApi\RateLimiter\RateLimiter;
-
-class RateLimitMiddleware
-{
-    public function handle($request, Closure $next)
-    {
-        try {
-            app(RateLimiter::class)->check(
-                new class($request) implements RequestContext {
-                    // Implement context methods
-                }
-            );
-        } catch (RateLimitExceededException $e) {
-            return response()->json([
-                'error' => 'Too many requests'
-            ], 429)->withHeaders($e->getHeaders());
-        }
-
-        return $next($request);
-    }
-}
-```
-
 ### Author:
 [Md Habibur Rahman](https://habib.im)
 
